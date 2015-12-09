@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+  <title>Roma Kurochkin</title>
+  <meta charset="utf-8">
+  <link href="assets/style.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif|PT+Sans|Open+Sans:300&subset=latin,cyrillic' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <h1>SonicPost</h1>
+    <nav class="main-nav">
+      <ul>
+      {{#each singlePageItems}}
+        <li><a href="#{{this.link}}">{{this.title}}</a></li>
+      {{/each}}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+    {{#each singlePageItems}}
+      <div class="item">
+        <a class="item-anchor" name="{{this.link}}"></a>
+        <h1 class="item-title">{{this.title}}</h1>
+        <div class="item-content">
+          {{{this.contents}}}
+        </div>
+        <img class="item-img" src="/assets/imgs/{{this.image}}">
+      </div>
+    {{/each}}
+    </div>
+  </main>
+  <aside></aside>
+</body>
